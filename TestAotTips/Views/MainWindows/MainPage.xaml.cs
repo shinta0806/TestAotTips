@@ -4,7 +4,7 @@ using TestAotTips.ViewModels.MainWindows;
 
 namespace TestAotTips.Views.MainWindows;
 
-public sealed partial class MainPage : Page
+internal sealed partial class MainPage : Page
 {
 	public MainPage()
 	{

@@ -10,12 +10,14 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
+using TestAotTips.Models;
+
 using WinRT;
 
 namespace TestAotTips.ViewModels.MainWindows;
 
 [GeneratedBindableCustomProperty]
-public partial class MainPageViewModel : ObservableRecipient
+internal partial class MainPageViewModel : ObservableRecipient
 {
 	// ====================================================================
 	// コンストラクター
@@ -37,7 +39,7 @@ public partial class MainPageViewModel : ObservableRecipient
 	// --------------------------------------------------------------------
 
 	/// <summary>
-	/// テスト用
+	/// テスト用数値
 	/// </summary>
 	private Int32 _testInt32 = 99;
 	public Int32 TestInt32
@@ -45,4 +47,17 @@ public partial class MainPageViewModel : ObservableRecipient
 		get => _testInt32;
 		set => SetProperty(ref _testInt32, value);
 	}
+
+	/// <summary>
+	/// テスト用リスト
+	/// </summary>
+	public List<Person> TestList
+	{
+		get;
+	} =
+	[
+		new ("太郎", 20),
+		new ("次郎", 15),
+		new ("三郎", 12),
+	];
 }

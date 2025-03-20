@@ -1,6 +1,6 @@
 namespace TestAotTips.Views.MainWindows;
 
-public sealed partial class MainWindow : WindowEx
+internal sealed partial class MainWindow : WindowEx
 {
 	public MainWindow()
 	{
