@@ -5,8 +5,6 @@ VisualStudioVersion = 17.13.35913.81 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAotTips", "TestAotTips\TestAotTips.csproj", "{F5B5C1C4-47F2-F465-44F0-3268ECBE3F26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAotTips.Core", "TestAotTips.Core\TestAotTips.Core.csproj", "{0AE8191F-F005-F886-527C-0577310A4279}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -19,10 +17,6 @@ Global
 		{F5B5C1C4-47F2-F465-44F0-3268ECBE3F26}.Release|x64.ActiveCfg = Release|x64
 		{F5B5C1C4-47F2-F465-44F0-3268ECBE3F26}.Release|x64.Build.0 = Release|x64
 		{F5B5C1C4-47F2-F465-44F0-3268ECBE3F26}.Release|x64.Deploy.0 = Release|x64
-		{0AE8191F-F005-F886-527C-0577310A4279}.Debug|x64.ActiveCfg = Debug|x64
-		{0AE8191F-F005-F886-527C-0577310A4279}.Debug|x64.Build.0 = Debug|x64
-		{0AE8191F-F005-F886-527C-0577310A4279}.Release|x64.ActiveCfg = Release|x64
-		{0AE8191F-F005-F886-527C-0577310A4279}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
