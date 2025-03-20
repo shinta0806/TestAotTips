@@ -1,6 +1,4 @@
-using TestAotTips.Views;
-
-namespace TestAotTips;
+namespace TestAotTips.Views.MainWindows;
 
 public sealed partial class MainWindow : WindowEx
 {

@@ -1,5 +1,7 @@
 using Microsoft.UI.Xaml;
 
+using TestAotTips.Views.MainWindows;
+
 namespace TestAotTips;
 
 // To learn more about WinUI 3, see https://docs.microsoft.com/windows/apps/winui/winui3/.
