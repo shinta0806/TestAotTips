@@ -6,14 +6,17 @@ namespace TestAotTips.Views.MainWindows;
 
 public sealed partial class MainPage : Page
 {
-	public MainViewModel ViewModel
-	{
-		get;
-	}
-
 	public MainPage()
 	{
 		ViewModel = new();
 		InitializeComponent();
+
+		// MVVM バインド Binding 用
+		DataContext = ViewModel;
+	}
+
+	public MainPageViewModel ViewModel
+	{
+		get;
 	}
 }

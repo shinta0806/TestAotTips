@@ -35,6 +35,15 @@
 
 		<!-- トリミングの最小単位：デフォルトは full、partial にするとオプトインしたアセンブリのみをトリミングする -->
 		<TrimMode>full</TrimMode>
+		<PackageCertificateThumbprint>F94834291E667B812C10DDF31A58101C591356FC</PackageCertificateThumbprint>
+		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+		<AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+		<GenerateTestArtifacts>True</GenerateTestArtifacts>
+		<AppxBundle>Never</AppxBundle>
+		<AppInstallerUri>http://example.com</AppInstallerUri>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -63,5 +72,13 @@
 
 	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
 		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+	  <NoWarn>IDE0049</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+	  <NoWarn>IDE0049</NoWarn>
 	</PropertyGroup>
 </Project>

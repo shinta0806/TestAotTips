@@ -1,26 +1,41 @@
 <Page
     x:Class="TestAotTips.Views.MainWindows.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:v="using:TestAotTips.ViewModels.MainWindows"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:DataType="v:MainPageViewModel"
     Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
     mc:Ignorable="d">
 
-	<Grid x:Name="ContentArea">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="48" />
-			<RowDefinition Height="*" />
-		</Grid.RowDefinitions>
+	<StackPanel Orientation="Horizontal" Margin="20" >
 
-		<TextBlock
-            Grid.Row="0"
-            x:Uid="Main_Title"
-            Style="{StaticResource PageTitleStyle}" />
+		<StackPanel >
+			
+			<!-- キャプション -->
+			<Border Background="Gold" Padding="5" >
+				<TextBlock Text="全般 Tips" />
+			</Border>
+		</StackPanel>
 
-		<Grid Grid.Row="1">
+		<StackPanel Margin="20,0,0,0" >
 
-		</Grid>
+			<!-- キャプション -->
+			<Border Background="Gold" Padding="5" >
+				<TextBlock Text="WinUI 3 Tips" />
+			</Border>
 
-	</Grid>
+			<!-- MVVM バインド -->
+			<StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+				<TextBlock Text="x:Bind:" />
+				<TextBlock Text="{x:Bind ViewModel.TestInt32, Mode=OneWay}" />
+				<TextBlock Text="Binding:" Margin="20,0,0,0" />
+				<TextBlock Text="{Binding TestInt32}" />
+			</StackPanel>
+
+		</StackPanel>
+		
+	</StackPanel>
+	
 </Page>
