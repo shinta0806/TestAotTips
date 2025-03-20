@@ -14,6 +14,27 @@
 		<UseWinUI>true</UseWinUI>
 		<EnableMsixTooling>true</EnableMsixTooling>
 		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+
+		<!-- Native AOT にする -->
+		<PublishAot>True</PublishAot>
+
+		<!-- AOT 互換性を宣言：これにより IsTrimmable も true になり、トリミング警告が表示されるようになる -->
+		<!-- 互換性を宣言せずに警告表示だけしたい場合は、代わりに EnableTrimAnalyzer を指定する -->
+		<IsAotCompatible>true</IsAotCompatible>
+
+		<!-- 分析の警告 -->
+		<SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+
+		<!-- 詳細な警告の表示 -->
+		<TrimmerSingleWarn>false</TrimmerSingleWarn>
+
+		<!-- AOT デプロイ最適化：デフォルトでは混合アプローチだが、Size / Speed を指定可能 -->
+		<!--
+		<OptimizationPreference>Speed</OptimizationPreference>
+		-->
+
+		<!-- トリミングの最小単位：デフォルトは full、partial にするとオプトインしたアセンブリのみをトリミングする -->
+		<TrimMode>full</TrimMode>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -37,7 +58,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Views\MainWindows\" />
+		<Folder Include="Views\MainWindows\" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
