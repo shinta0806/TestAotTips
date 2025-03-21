@@ -8,8 +8,11 @@
 // 
 // ----------------------------------------------------------------------------
 
+using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
 using CommunityToolkit.Mvvm.ComponentModel;
-
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.Options;
 using TestAotTips.Models;
 
 using WinRT;
@@ -28,6 +31,8 @@ internal partial class MainPageViewModel : ObservableRecipient
 	/// </summary>
 	public MainPageViewModel()
 	{
+		// コマンド
+		ButtonJsonClickedCommand = new(ButtonJsonClicked);
 	}
 
 	// ====================================================================
@@ -60,4 +65,39 @@ internal partial class MainPageViewModel : ObservableRecipient
 		new ("次郎", 15),
 		new ("三郎", 12),
 	];
+
+	// --------------------------------------------------------------------
+	// コマンド
+	// --------------------------------------------------------------------
+
+	#region JSON ボタンの制御
+	public RelayCommand ButtonJsonClickedCommand
+	{
+		get;
+	}
+
+	private async void ButtonJsonClicked()
+	{
+		try
+		{
+			// JSON へシリアライズ
+			AddressBook addressBook = new()
+			{
+				BookName = "My address book",
+			};
+			addressBook.People = TestList;
+			String json = JsonSerializer.Serialize(addressBook, MyJsonSerializerContext.Default.AddressBook);
+			await App.MainWindow.ShowMessageDialogAsync("シリアライズ：\n" + json);
+
+			// JSON からデシリアライズ
+			AddressBook addressBook2 = JsonSerializer.Deserialize(json, MyJsonSerializerContext.Default.AddressBook) ?? throw new Exception("デシリアライズ失敗");
+			await App.MainWindow.ShowMessageDialogAsync("デシリアライズ：\n" + addressBook2.People[0]);
+		}
+		catch (Exception ex)
+		{
+			await App.MainWindow.ShowMessageDialogAsync(ex.Message);
+		}
+	}
+	#endregion
+
 }
