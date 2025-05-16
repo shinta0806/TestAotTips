@@ -9,11 +9,11 @@
 // ----------------------------------------------------------------------------
 
 using System.Text.Json;
-using System.Text.Json.Serialization.Metadata;
+
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.Extensions.Options;
-using TestAotTips.Models;
+
+using TestAotTips.Models.Json;
 
 using WinRT;
 

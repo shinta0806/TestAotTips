@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace TestAotTips.Models;
+namespace TestAotTips.Models.Json;
 
 [JsonSourceGenerationOptions(PropertyNameCaseInsensitive = true)]
 [JsonSerializable(typeof(AddressBook))]

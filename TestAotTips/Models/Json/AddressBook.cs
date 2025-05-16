@@ -1,12 +1,12 @@
-namespace TestAotTips.Models;
+namespace TestAotTips.Models.Json;
 
 internal class AddressBook
 {
-	public String BookName
+	public string BookName
 	{
 		get;
 		set;
-	} = String.Empty;
+	} = string.Empty;
 
 	public List<Person> People
 	{
