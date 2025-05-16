@@ -84,8 +84,8 @@ internal partial class MainPageViewModel : ObservableRecipient
 			AddressBook addressBook = new()
 			{
 				BookName = "My address book",
+				People = TestList
 			};
-			addressBook.People = TestList;
 			String json = JsonSerializer.Serialize(addressBook, MyJsonSerializerContext.Default.AddressBook);
 			await App.MainWindow.ShowMessageDialogAsync("シリアライズ：\n" + json);
 

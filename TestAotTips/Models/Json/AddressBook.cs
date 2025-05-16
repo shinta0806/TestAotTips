@@ -12,5 +12,5 @@ internal class AddressBook
 	{
 		get;
 		set;
-	} = new();
+	} = [];
 }
