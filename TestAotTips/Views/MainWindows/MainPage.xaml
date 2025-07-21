@@ -21,6 +21,8 @@
 			<!-- JSON -->
 			<Button Content="JSON" Command="{x:Bind ViewModel.ButtonJsonClickedCommand}" Margin="0,10,0,0" />
 
+			<!-- JSON（カスタムコンバーター） -->
+			<Button Content="JSON（カスタムコンバーター）" Command="{x:Bind ViewModel.ButtonJsonCcClickedCommand}" Margin="0,10,0,0" />
 
 		</StackPanel>
 
