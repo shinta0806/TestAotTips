@@ -1,9 +1,10 @@
 using System.Runtime.Intrinsics;
-using System.Text.Json.Serialization;
 
 namespace TestAotTips.Models.Json;
 
-[JsonConverter(typeof(RgbaConverter))]
+/// <summary>
+/// カスタムコンバーターの使い分けが不要の場合は、[JsonConverter(typeof(RgbaConverter))] を使用する
+/// </summary>
 internal class Rgba
 {
 	private readonly Vector128<Single> _value;

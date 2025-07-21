@@ -61,15 +61,13 @@ internal class RgbaConverter : JsonConverter<Rgba>
 		return new Rgba(r, g, b, a);
 	}
 
-	/// <summary>
-	/// Write() はデフォルト実装をそのまま使いたいが、AOT では JsonSerializerOptions.Default.GetConverter(typeof(Rgba)) が例外になるため、
-	/// デフォルト実装と同様の実装を書いている
-	/// </summary>
-	/// <param name="writer"></param>
-	/// <param name="value"></param>
-	/// <param name="options"></param>
 	public override void Write(Utf8JsonWriter writer, Rgba value, JsonSerializerOptions options)
 	{
+		// シリアライズではカスタムコンバーター不要なので実装しない
+		throw new NotImplementedException();
+
+#if false
+		// 仮に実装するならこんな感じ
 		if (value is null)
 		{
 			writer.WriteNullValue();
@@ -84,5 +82,6 @@ internal class RgbaConverter : JsonConverter<Rgba>
 		writer.WriteNumber(nameof(Rgba.A), value.A);
 
 		writer.WriteEndObject();
+#endif
 	}
 }

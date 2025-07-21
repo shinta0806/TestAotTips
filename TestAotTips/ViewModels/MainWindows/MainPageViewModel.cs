@@ -112,14 +112,14 @@ internal partial class MainPageViewModel : ObservableRecipient
 		try
 		{
 			// JSON へシリアライズ
+			// Rgba のシリアライズにはカスタムコンバーター不要なので、MyJsonSerializerContext を使用する
 			Rgba rgba = new(0.2f, 0.4f, 0.6f, 0.8f);
 			String json = JsonSerializer.Serialize(rgba, MyJsonSerializerContext.Default.Rgba);
-			//String json = @"{""R"":0.2,""G"":0.4,""B"":0.6,""A"":0.8}";
-			Debug.WriteLine("ButtonJsonCcClicked() " + json);
 			await App.MainWindow.ShowMessageDialogAsync("シリアライズ：\n" + json);
 
 			// JSON からデシリアライズ
-			Rgba rgba2 = JsonSerializer.Deserialize(json, MyJsonSerializerContext.Default.Rgba) ?? throw new Exception("デシリアライズ失敗");
+			// Rgba のデシリアライズにはカスタムコンバーターが必要なので、RgbaReadJsonSerializerContext を使用する
+			Rgba rgba2 = JsonSerializer.Deserialize(json, RgbaReadJsonSerializerContext.Default.Rgba) ?? throw new Exception("デシリアライズ失敗");
 			await App.MainWindow.ShowMessageDialogAsync($"デシリアライズ：\nR={rgba2.R}, G={rgba2.G}, B={rgba2.B}, A={rgba2.A}");
 		}
 		catch (Exception ex)
