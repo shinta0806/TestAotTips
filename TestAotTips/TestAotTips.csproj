@@ -35,7 +35,7 @@
 
 		<!-- トリミングの最小単位：デフォルトは full、partial にするとオプトインしたアセンブリのみをトリミングする -->
 		<TrimMode>full</TrimMode>
-		<PackageCertificateThumbprint>F94834291E667B812C10DDF31A58101C591356FC</PackageCertificateThumbprint>
+		<PackageCertificateThumbprint>2F4C20006E888EFDFC1C1DC9D3EAFC9BCD885674</PackageCertificateThumbprint>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
 		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
@@ -56,11 +56,11 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
 		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251106002" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.0" />
-		<PackageReference Include="WinUIEx" Version="2.6.0" />
+		<PackageReference Include="WinUIEx" Version="2.9.0" />
 	</ItemGroup>
 
 	<ItemGroup>
