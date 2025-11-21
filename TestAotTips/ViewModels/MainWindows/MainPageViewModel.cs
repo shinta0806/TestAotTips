@@ -67,6 +67,16 @@ internal partial class MainPageViewModel : ObservableRecipient
 		new ("三郎", 12),
 	];
 
+	/// <summary>
+	/// テスト用リストで選択された人の名前
+	/// </summary>
+	private String? _selectedPersonName;
+	public String? SelectedPersonName
+	{
+		get => _selectedPersonName;
+		set => SetProperty(ref _selectedPersonName, value);
+	}
+
 	// --------------------------------------------------------------------
 	// コマンド
 	// --------------------------------------------------------------------
